@@ -1,7 +1,7 @@
 return {
   {
-    "rebelot/kanagawa.nvim",
-    -- "EdenEast/nightfox.nvim",
+    -- "rebelot/kanagawa.nvim",
+    "EdenEast/nightfox.nvim",
     -- "folke/tokyonight.nvim",
     priority = 1000,
     opts = {},
@@ -12,8 +12,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-dragon",
-      -- colorscheme = "carbonfox",
+      -- colorscheme = "kanagawa-dragon",
+      colorscheme = "carbonfox",
       -- colorscheme = "tokyonight-moon",
     },
   },
