@@ -6,9 +6,9 @@ return {
   opts = {
     -- add any opts here
     ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-    provider = "gemini", -- Recommend using Claude
+    -- provider = "gemini", -- Recommend using Claude
     -- auto_suggestions_provider = "gemini", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-    -- provider = "copilot", -- Recommend using Claude
+    provider = "copilot", -- Recommend using Claude
     auto_suggestions_provider = "copilot", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
     gemini = {
       endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
