@@ -15,6 +15,7 @@ return {
       -- colorscheme = "kanagawa-dragon",
       colorscheme = "carbonfox",
       -- colorscheme = "tokyonight-moon",
+      -- colorscheme = "tokyonight-night",
     },
   },
 }
