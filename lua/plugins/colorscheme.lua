@@ -1,10 +1,16 @@
 return {
   {
     -- "rebelot/kanagawa.nvim",
-    "EdenEast/nightfox.nvim",
     -- "folke/tokyonight.nvim",
+    "EdenEast/nightfox.nvim",
     priority = 1000,
     opts = {
+      options = {
+        styles = {
+          comments = "italic",
+          keywords = "bold",
+        },
+      },
       palettes = {
         -- Custom duskfox with black background
         nightfox = {
