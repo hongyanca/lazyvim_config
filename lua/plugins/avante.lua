@@ -1,6 +1,6 @@
-if true then
-  return {}
-end
+-- if true then
+--   return {}
+-- end
 
 return {
   "yetone/avante.nvim",
@@ -11,8 +11,10 @@ return {
     -- add any opts here
     ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
     -- provider = "gemini", -- Recommend using Claude
+    -- provider = "copilot", -- Recommend using Claude
+    -- provider = "openrouter", -- Recommend using Claude
     -- auto_suggestions_provider = "gemini", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-    provider = "copilot", -- Recommend using Claude
+    provider = "copilot",
     auto_suggestions_provider = "copilot", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
     gemini = {
       endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
@@ -23,12 +25,21 @@ return {
     },
     copilot = {
       endpoint = "https://api.githubcopilot.com",
-      model = "gpt-4o-2024-08-06",
+      -- model = "gpt-4o-2024-08-06",
+      model = "claude-3.5-sonnet",
       proxy = nil, -- [protocol://]host[:port] Use this proxy
       allow_insecure = false, -- Allow insecure server connections
       timeout = 30000, -- Timeout in milliseconds
       temperature = 0,
       max_tokens = 8192,
+    },
+    vendors = {
+      openrouter = {
+        __inherited_from = "openai",
+        endpoint = "https://openrouter.ai/api/v1",
+        api_key_name = "OPENROUTER_API_KEY",
+        model = "google/gemini-2.0-pro-exp-02-05:free",
+      },
     },
     ---Specify the special dual_boost mode
     ---1. enabled: Whether to enable dual_boost mode. Default to false.
