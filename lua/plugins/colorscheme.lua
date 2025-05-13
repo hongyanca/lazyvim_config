@@ -5,6 +5,7 @@ return {
     "EdenEast/nightfox.nvim",
     priority = 1000,
     opts = {
+      transparent = true,
       options = {
         styles = {
           comments = "italic",
