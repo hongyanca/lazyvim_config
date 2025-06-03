@@ -16,26 +16,28 @@ return {
     -- auto_suggestions_provider = "gemini", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
     provider = "copilot",
     auto_suggestions_provider = "openrouter", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-    gemini = {
-      endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
-      model = "gemini-2.0-flash-exp",
-      timeout = 30000, -- Timeout in milliseconds
-      temperature = 0,
-      max_tokens = 8192,
-    },
-    copilot = {
-      endpoint = "https://api.githubcopilot.com",
-      -- model = "gpt-4o-2024-08-06",
-      -- model = "claude-3.5-sonnet",
-      model = "claude-3.7-sonnet",
-      proxy = nil, -- [protocol://]host[:port] Use this proxy
-      allow_insecure = false, -- Allow insecure server connections
-      timeout = 30000, -- Timeout in milliseconds
-      temperature = 0.1,
-      -- max_tokens = 8192,
-      max_tokens = 32768,
-    },
-    vendors = {
+    providers = {
+      copilot = {
+        endpoint = "https://api.githubcopilot.com",
+        -- model = "claude-3.5-sonnet",
+        model = "claude-3.7-sonnet",
+        proxy = nil, -- [protocol://]host[:port] Use this proxy
+        allow_insecure = false, -- Allow insecure server connections
+        timeout = 30000, -- Timeout in milliseconds
+        extra_request_body = {
+          temperature = 0.1,
+          max_tokens = 32768,
+        },
+      },
+      gemini = {
+        endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+        model = "gemini-2.0-flash-exp",
+        timeout = 30000, -- Timeout in milliseconds
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 8192,
+        },
+      },
       openrouter = {
         __inherited_from = "openai",
         endpoint = "https://openrouter.ai/api/v1",
