@@ -1,30 +1,39 @@
 return {
   {
-    "EdenEast/nightfox.nvim",
-    -- "webhooked/kanso.nvim",
-    priority = 1000,
-    opts = {
-      transparent = true,
-      options = {
-        styles = {
-          comments = "italic",
-          keywords = "bold",
-        },
-      },
-      -- paletts for nightfox and terafox
-      palettes = {
-        -- Custom duskfox with black background
-        nightfox = {
-          bg1 = "#080B10", -- Black background
-          -- bg0 = "#000000", -- Alt backgrounds (floats, statusline, ...)
-        },
-        terafox = {
-          bg1 = "#080B10", -- Black background
-          -- bg0 = "#000000", -- Alt backgrounds (floats, statusline, ...)
-        },
-      },
-    },
+    -- "EdenEast/nightfox.nvim",
+    "webhooked/kanso.nvim",
+
     lazy = false,
+    priority = 1000,
+
+    -- kanso.nvim options
+    opts = {
+      bold = true,
+      italics = true,
+      transparent = true,
+    },
+
+    -- nightfox.nvim options
+    -- opts = {
+    --   transparent = true,
+    --   options = {
+    --     styles = {
+    --       comments = "italic",
+    --       keywords = "bold",
+    --     },
+    --   },
+    --   palettes = {
+    --     -- Custom duskfox with black background
+    --     nightfox = {
+    --       bg1 = "#080B10", -- Black background
+    --       -- bg0 = "#000000", -- Alt backgrounds (floats, statusline, ...)
+    --     },
+    --     terafox = {
+    --       bg1 = "#080B10", -- Black background
+    --       -- bg0 = "#000000", -- Alt backgrounds (floats, statusline, ...)
+    --     },
+    --   },
+    -- },
   },
 
   -- Configure LazyVim to load colorscheme
@@ -32,9 +41,10 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "carbonfox",
-      colorscheme = "terafox",
+      -- colorscheme = "terafox",
       -- colorscheme = "nightfox",
-      -- colorscheme = "kanso",
+      -- colorscheme = "kanso-ink",
+      colorscheme = "kanso-zen",
     },
   },
 
@@ -45,7 +55,7 @@ return {
     opts = function(_, opts)
       local ok, lazyvim = pcall(require, "lazyvim.config")
       local colorscheme = ok and lazyvim.colorscheme or vim.g.colors_name
-      if colorscheme == "kanso" then
+      if colorscheme == "kanso" or colorscheme == "kanso-zen" or colorscheme == "kanso-ink" then
         -- Remove clock from lualine_z if present
         if opts.sections and opts.sections.lualine_z then
           local z = opts.sections.lualine_z
