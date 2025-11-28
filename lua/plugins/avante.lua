@@ -19,7 +19,8 @@ return {
     providers = {
       copilot = {
         endpoint = "https://api.githubcopilot.com",
-        model = "claude-3.7-sonnet",
+        model = "gpt-4.1",
+        -- model = "gpt-5-mini",
         proxy = nil, -- [protocol://]host[:port] Use this proxy
         allow_insecure = false, -- Allow insecure server connections
         timeout = 30000, -- Timeout in milliseconds
@@ -30,7 +31,7 @@ return {
       },
       gemini = {
         endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
-        model = "gemini-2.0-flash-exp",
+        model = "gemini-2.5-flash",
         timeout = 30000, -- Timeout in milliseconds
         extra_request_body = {
           temperature = 0,
@@ -41,7 +42,7 @@ return {
         __inherited_from = "openai",
         endpoint = "https://openrouter.ai/api/v1",
         api_key_name = "OPENROUTER_API_KEY",
-        model = "google/gemini-2.0-flash-exp:free",
+        model = "x-ai/grok-4.1-fast:free",
       },
     },
     ---Specify the special dual_boost mode
