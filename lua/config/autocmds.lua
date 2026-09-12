@@ -18,3 +18,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {
     vim.diagnostic.enable(false, { bufnr = e.buf })
   end,
 })
+
+-- Map jsonc filetype to the json parser for treesitter
+vim.treesitter.language.register("json", "jsonc")
