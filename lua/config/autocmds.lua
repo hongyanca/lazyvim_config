@@ -18,3 +18,4 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {
     vim.diagnostic.enable(false, { bufnr = e.buf })
   end,
 })
+

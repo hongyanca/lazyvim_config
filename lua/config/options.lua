@@ -2,6 +2,9 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- Use the JSON parser for JSONC buffers; register before filetype plugins run.
+vim.treesitter.language.register("json", "jsonc")
+
 local is_tmux_session = vim.env.TERM_PROGRAM == "tmux"
 if vim.env.SSH_TTY and not is_tmux_session then
   local function paste()
